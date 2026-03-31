@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend && pnpm install && pnpm build",
+  "outputDirectory": "frontend/.next",
+  "installCommand": "pnpm install --recursive",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@next_public_api_url",
+    "NEXT_PUBLIC_CHAIN_ID": "@next_public_chain_id",
+    "NEXT_PUBLIC_RPC_URL": "@next_public_rpc_url",
+    "NEXT_PUBLIC_VAULT_ADDRESS": "@next_public_vault_address",
+    "NEXT_PUBLIC_ORDER_BOOK_ADDRESS": "@next_public_order_book_address",
+    "NEXT_PUBLIC_TRADING_ENGINE_ADDRESS": "@next_public_trading_engine_address",
+    "NEXT_PUBLIC_AUTO_INVEST_VAULT_ADDRESS": "@next_public_auto_invest_vault_address",
+    "NEXT_PUBLIC_WBTC_ADDRESS": "@next_public_wbtc_address",
+    "NEXT_PUBLIC_WETH_ADDRESS": "@next_public_weth_address",
+    "NEXT_PUBLIC_WSOL_ADDRESS": "@next_public_wsol_address",
+    "NEXT_PUBLIC_USDC_ADDRESS": "@next_public_usdc_address"
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "http://localhost:3001/api/:path*"
+    },
+    {
+      "source": "/ws",
+      "destination": "ws://localhost:3001/ws"
+    }
+  ]
+}
