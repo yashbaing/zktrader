@@ -17,7 +17,7 @@ const nextConfig = {
       type: 'webassembly/async',
     });
 
-    // Alias fhevmjs to our local shim to avoid wasm resolution issues
+    // Alias fhevmjs to our local shim to avoid wasm resolution errors
     config.resolve.alias = {
       ...config.resolve.alias,
       fhevmjs: path.resolve(__dirname, 'src/lib/fhevm-shim.ts'),
